@@ -5,8 +5,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from constants import BORED_ENDPOINT, UNSPLASH_ENDPOINT
-from config import ACCESS_KEY
+from webapp.constants import BORED_ENDPOINT, UNSPLASH_ENDPOINT
+from webapp.config import ACCESS_KEY
 
 app = FastAPI(title='AmuzeMe')
 app.mount(
@@ -15,7 +15,7 @@ app.mount(
     name="static",
 )
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="webapp/templates")
 
 
 def get_bored_activity() -> str:
