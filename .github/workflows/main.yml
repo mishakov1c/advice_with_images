@@ -19,6 +19,8 @@ jobs:
         run: echo "PYTHONPATH=$PYTHONPATH:${PWD}/webapp" >> $GITHUB_ENV
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: List installed dependencies
+        run: pip list
       - name: Run flake8
         run: flake8 .
       - name: Run mypy
