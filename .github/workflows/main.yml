@@ -17,6 +17,8 @@ jobs:
           python-version: 3.10.10
       - name: Set up PYTHONPATH
         run: echo "PYTHONPATH=${PWD}" >> $GITHUB_ENV
+      - name: Set up PYTHONPATH for webapp
+        run: echo "PYTHONPATH=$PYTHONPATH:${PWD}/webapp" >> $GITHUB_ENV
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Run flake8
