@@ -14,12 +14,11 @@ def test__get_advice__success():
 
         client = TestClient(main.app)
         response = client.get("/")
-        print('start')
-        print(response.template)
-        print('finish')
+
         assert response.status_code == 200
         assert response.template.name == 'index.html'
         assert response.context['activity'] == "Research a topic you're interested in"
         assert response.context['picture_link'] == "https://images.unsplash.com/photo-153218786.jpg"
+
         get_bored_activity_mock.assert_called_once()
         get_unsplash_picture_mock.assert_called_once_with("Research a topic you're interested in")
