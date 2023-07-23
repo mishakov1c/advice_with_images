@@ -22,3 +22,6 @@ def test__get_advice__success():
 
         get_bored_activity_mock.assert_called_once()
         get_unsplash_picture_mock.assert_called_once_with("Research a topic you're interested in")
+
+
+# 7
