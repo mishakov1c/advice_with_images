@@ -24,4 +24,4 @@ jobs:
       - name: Run mypy
         run: mypy --install-types .
       - name: Run tests
-        run: pytest
+        run: python -m pytest .
